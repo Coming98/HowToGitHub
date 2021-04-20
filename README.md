@@ -1,2 +1,6 @@
 # HowToGitHub
-Hello world, start to face the open source world.
+Hello World, start to face the open source world.
+
+repository
+
+I love :coffee: :pizza:, and :dancer:.
