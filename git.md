@@ -373,10 +373,28 @@ $ git add . # 添加当前目录的所有文件到暂存区
 $ git add -p
 ############## 删除文件
 $ git rm --cached [file] # 停止追踪指定文件，但该文件会保留在工作区
-
-$ git rm [file1] [file2] ... # 删除工作区文件，并且将这次删除放入暂存区
+$ git rm [file1] [file2] ... # 删除工作区文件，并且将这次删除记录add到暂存区
+$ git clean -f file # 删除未被追踪的文件
+$ git clean -d dir
+$ git rm -r --f file # 删除追踪 并 删除文件
 $ git mv [file-original] [file-renamed] # 改名文件，并且将这个改名放入暂存区
 ~~~
+
+# 忽略文件
+
+与项目实际功能无关的一些文件
+
+1. 家目录下创建忽略规则文件： `xxx.ignore` - `git.ignore`
+
+2. 想忽略什么文件就写入其中即可，支持通配符 `*`
+
+3. 在 `git.config` 中引入该文件 - 注意需要使用正斜线 `/`
+
+   ~~~ssh
+   [core]
+   	excludesfile = 
+   ~~~
+
 
 # 提交代码
 
@@ -393,6 +411,8 @@ $ git commit --amend -m [message]
 # 重做上一次commit，并包括指定文件的新变化
 $ git commit --amend [file1] [file2] ...
 ~~~
+
+
 
 # 回退版本
 
